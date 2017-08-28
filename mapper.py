@@ -10,6 +10,6 @@ for link in f.read().split('\n'):
     for links in soup.find_all('div', {'class':'repo-list-item'}):
         a = links.find('a')
         print(a['href'])
-    sleep(1)
+    sleep(5)
 
 f.close()
