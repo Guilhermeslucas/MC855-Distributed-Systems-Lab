@@ -18,7 +18,6 @@ def try_connection(link):
     try:
         return ur.urlopen(link).read()
     except Exception as e:
-        print(e)
         sleep(5)
         return try_connection(link)
 
