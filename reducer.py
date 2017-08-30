@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 
 repo_link = 'https://github.com'
