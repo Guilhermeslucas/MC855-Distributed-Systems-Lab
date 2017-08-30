@@ -3,8 +3,6 @@
 import urllib.request as ur
 from bs4 import BeautifulSoup
 
-f = open('github_links.txt','r')
-
 def try_connection(link):
     """
     funtion used to request a web page and return it in a readable way.
@@ -23,7 +21,7 @@ def try_connection(link):
         sleep(5)
         return try_connection(link)
 
-for link in f.read().split('\n'):
+for link in sys.stdin:
     if link == '':
         break
     response = try_connection(link)
@@ -31,4 +29,3 @@ for link in f.read().split('\n'):
     for links in soup.find_all('div', {'class':'repo-list-item'}):
         a = links.find('a')
         print(a['href'])
-f.close()
