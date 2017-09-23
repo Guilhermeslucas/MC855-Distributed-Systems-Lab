@@ -15,4 +15,3 @@ for line in $output
 do
     echo $line
 done
-
