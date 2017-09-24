@@ -1,6 +1,10 @@
 #!/bin/sh
 
-if [ $1 = "test" ] 
+if [ -z $1 ]
+then
+    echo "You should pass test or train as argument"
+
+elif [ $1 = "test" ] 
 then
     output="$(~/Documentos/Unicamp/MC855/hadoop-2.7.4/bin/hdfs dfs -cat /data/year-prediction-msd-test.txt)"
 elif [ $1 = "train" ]
